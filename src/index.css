@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -18,14 +19,14 @@
     --popover: 0 0% 100%;
     --popover-foreground: 213 52% 7%;
 
-    /* Teal #10B981 as primary */
-    --primary: 158 64% 52%;
+    /* Teal #0D9488 as primary - darker teal to match image */
+    --primary: 173 80% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 158 64% 45%;
+    --primary-hover: 173 80% 35%;
 
     /* Teal gradient variations */
-    --teal-light: 158 64% 65%;
-    --teal-dark: 158 85% 25%;
+    --teal-light: 173 80% 55%;
+    --teal-dark: 173 80% 25%;
 
     /* Navy #1F2A44 as secondary */
     --secondary: 220 38% 20%;
@@ -120,6 +121,10 @@
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {

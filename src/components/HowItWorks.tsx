@@ -57,13 +57,13 @@ const HowItWorks = () => {
   const activeStepData = steps.find(step => step.id === activeStep) || steps[0];
 
   return (
-    <section id="how-it-works" className="py-16 md:py-24 bg-background">
+    <section id="how-it-works" className="py-16 md:py-24 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-grotesk font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-proxima font-bold text-secondary-foreground mb-4">
             How it works
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
             Three simple steps to start crowdproducing Filipino films
           </p>
         </div>
@@ -83,8 +83,8 @@ const HowItWorks = () => {
                 }}
                 className={`w-full text-left p-6 rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                   activeStep === step.id
-                    ? 'border-primary bg-primary/5 shadow-lg'
-                    : 'border-border bg-card hover:border-primary/50 hover:shadow-md'
+                    ? 'border-primary bg-primary text-primary-foreground shadow-lg'
+                    : 'border-primary bg-secondary hover:border-primary/70 hover:shadow-md'
                 }`}
                 role="tab"
                 aria-selected={activeStep === step.id}
@@ -94,8 +94,8 @@ const HowItWorks = () => {
                   <div
                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
                       activeStep === step.id
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-muted text-muted-foreground'
+                        ? 'bg-secondary text-secondary-foreground'
+                        : 'bg-primary text-primary-foreground'
                     }`}
                   >
                     {step.id}
@@ -103,12 +103,14 @@ const HowItWorks = () => {
                   <div>
                     <h3
                       className={`text-lg font-semibold ${
-                        activeStep === step.id ? 'text-primary' : 'text-foreground'
+                        activeStep === step.id ? 'text-primary-foreground' : 'text-secondary-foreground'
                       }`}
                     >
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mt-1">
+                    <p className={`text-sm mt-1 ${
+                      activeStep === step.id ? 'text-primary-foreground/90' : 'text-secondary-foreground/80'
+                    }`}>
                       {step.description}
                     </p>
                   </div>
@@ -124,17 +126,17 @@ const HowItWorks = () => {
             aria-labelledby={`step-${activeStep}`}
             className="lg:sticky lg:top-8"
           >
-            <Card className="p-8 shadow-lg">
+            <Card className="p-8 shadow-lg bg-secondary border-primary">
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                     {activeStepData.id}
                   </div>
-                  <h3 className="text-2xl font-grotesk font-bold text-foreground">
+                  <h3 className="text-2xl font-proxima font-bold text-primary">
                     {activeStepData.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-lg">
+                <p className="text-secondary-foreground/80 text-lg">
                   {activeStepData.description}
                 </p>
               </div>
@@ -143,7 +145,7 @@ const HowItWorks = () => {
                 {activeStepData.bullets.map((bullet, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <p className="text-foreground">{bullet}</p>
+                    <p className="text-secondary-foreground">{bullet}</p>
                   </div>
                 ))}
               </div>

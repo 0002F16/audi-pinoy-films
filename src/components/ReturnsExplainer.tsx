@@ -38,7 +38,7 @@ const ReturnsExplainer = () => {
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-grotesk font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-proxima font-bold text-foreground mb-4">
             Returns depend on film performance
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -55,7 +55,7 @@ const ReturnsExplainer = () => {
           {scenarios.map((scenario) => (
             <Card key={scenario.label} className="p-6 shadow-card hover:shadow-lg transition-shadow">
               <div className="text-center mb-6">
-                <h3 className={`text-xl font-grotesk font-bold mb-2 ${
+                <h3 className={`text-xl font-proxima font-bold mb-2 ${
                   scenario.label === 'Good' ? 'text-maroon' :
                   scenario.label === 'Better' ? 'text-primary' : 'text-teal-light'
                 }`}>
