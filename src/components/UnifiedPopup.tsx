@@ -10,7 +10,7 @@ type UnifiedPopupProps = {
 const UnifiedPopup = ({ isOpen, onClose }: UnifiedPopupProps) => {
   const handleCalendarClick = () => {
     // Replace with your actual calendar link
-    window.open("https://calendly.com/your-username", "_blank");
+    window.open("https://calendar.app.google/CikbTmd3v91epCbR6", "_blank");
   };
 
   return (

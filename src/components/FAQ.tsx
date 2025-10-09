@@ -7,24 +7,32 @@ import {
 
 const faqData = [
   {
-    question: "What is crowdproducing?",
-    answer: "Crowdproducing is a form of film financing where individuals contribute funds to support film production in exchange for potential returns based on the film's performance. Unlike traditional crowdfunding, participants may receive financial returns if the film is successful."
+    question: "What is Audience Impact?",
+    answer: "Audience Impact lets you invest in Filipino films while they're still in pre-production—before cameras roll. You become a crowdproducer who helps bring stories to life and shares in the potential returns once the film is released."
   },
   {
-    question: "What are the minimum amounts?",
-    answer: "The minimum participation starts at ₱5,000 to ₱10,000 per film project. This makes it accessible for Filipino film enthusiasts to support local cinema while potentially earning returns."
+    question: "How does crowdproducing work?",
+    answer: "You browse upcoming projects in pre-production, choose one you believe in, and fund part of its budget. When the film earns from cinemas, streaming, or licensing, you receive your share of the profit."
   },
   {
-    question: "What are the risks?",
-    answer: "Film investments are high-risk. Projects may not reach funding targets, films may not be completed, or completed films may not generate sufficient revenue for returns. You could lose your entire investment. Only invest what you can afford to lose."
+    question: "How much can I start with?",
+    answer: "Start with as little as ₱5,000. It's built for everyday Filipinos who want access to the movie business without needing millions."
   },
   {
-    question: "How will I get updates?",
-    answer: "You'll receive regular email updates at key production milestones including pre-production, filming, post-production, and distribution. We maintain transparent communication with detailed progress reports and financial summaries."
+    question: "Is this the same as crypto or MLM?",
+    answer: "No. You're not buying tokens or joining a network. You're helping finance real films with real directors, actors, and crews—transparent and trackable from concept to release."
   },
   {
-    question: "When will investing open?",
-    answer: "We're currently in development and preparing our first batch of film projects. Join our waitlist to be notified when the platform launches and film investments become available."
+    question: "How do I earn returns?",
+    answer: "After production and agreed fees, the remaining profit pool is split among backers. Returns depend on each film's actual performance."
+  },
+  {
+    question: "Is my money safe?",
+    answer: "Every project includes full disclosures, signed agreements, and production updates. You always know where your funds go and how the project is progressing."
+  },
+  {
+    question: "When can I join?",
+    answer: "We're running a concept test ahead of launch. Join an early interview and get ₱500 compensation for your insights—you'll be among the first to help shape the platform."
   }
 ];
 
