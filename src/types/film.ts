@@ -4,7 +4,7 @@ export interface Film {
   genre: string;
   director: string;
   cast: string[];
-  targetDate: string;
+  targetDate: string | null;
   description: string;
   posterUrl: string;
   status: 'upcoming' | 'funding' | 'in-production' | 'completed' | 'cancelled';
@@ -14,25 +14,17 @@ export interface Film {
   minimumInvestment: number;
   maximumInvestment: number;
   expectedReturns: string;
-  riskLevel: 'low' | 'medium' | 'high';
-  productionCompany: string;
-  producer: string;
+  productionCompany: string | null;
+  producer: string | null;
   writer: string;
   cinematographer?: string;
   musicComposer?: string;
-  runtime: number; // in minutes
   language: string;
   country: string;
   releaseDate?: string;
   distributionRights: string[];
   awards?: string[];
   festivalSelections?: string[];
-  socialMedia: {
-    instagram?: string;
-    twitter?: string;
-    facebook?: string;
-    youtube?: string;
-  };
   createdAt: string;
   updatedAt: string;
 }
@@ -40,7 +32,6 @@ export interface Film {
 export interface FilmFilters {
   genre?: string;
   status?: string;
-  riskLevel?: string;
   minBudget?: number;
   maxBudget?: number;
   director?: string;

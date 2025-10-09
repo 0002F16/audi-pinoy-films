@@ -5,7 +5,7 @@ import filmsData from '@/data/films.json';
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export class FilmService {
-  private static films: Film[] = filmsData.films;
+  private static films: Film[] = filmsData.films as Film[];
 
   // Get all films
   static async getAllFilms(): Promise<Film[]> {
@@ -49,7 +49,6 @@ export class FilmService {
     return this.films.filter(film => {
       if (filters.genre && film.genre !== filters.genre) return false;
       if (filters.status && film.status !== filters.status) return false;
-      if (filters.riskLevel && film.riskLevel !== filters.riskLevel) return false;
       if (filters.minBudget && film.budget < filters.minBudget) return false;
       if (filters.maxBudget && film.budget > filters.maxBudget) return false;
       if (filters.director && !film.director.toLowerCase().includes(filters.director.toLowerCase())) return false;
@@ -62,7 +61,10 @@ export class FilmService {
     await delay(200);
     const totalFilms = this.films.length;
     const totalFunding = this.films.reduce((sum, film) => sum + film.currentFunding, 0);
-    const averageBudget = this.films.reduce((sum, film) => sum + film.budget, 0) / totalFilms;
+    const filmsWithBudget = this.films.filter(film => film.budget && film.budget > 0);
+    const averageBudget = filmsWithBudget.length > 0 
+      ? filmsWithBudget.reduce((sum, film) => sum + film.budget, 0) / filmsWithBudget.length 
+      : 0;
     const completedFilms = this.films.filter(film => film.status === 'completed').length;
     const successRate = totalFilms > 0 ? (completedFilms / totalFilms) * 100 : 0;
 
@@ -116,13 +118,11 @@ export class FilmService {
     await delay(200);
     const genres = [...new Set(this.films.map(film => film.genre))];
     const statuses = [...new Set(this.films.map(film => film.status))];
-    const riskLevels = [...new Set(this.films.map(film => film.riskLevel))];
     const directors = [...new Set(this.films.map(film => film.director))];
     
     return {
       genres: genres.sort(),
       statuses: statuses.sort(),
-      riskLevels: riskLevels.sort(),
       directors: directors.sort()
     };
   }

@@ -22,7 +22,7 @@ const InvestmentPanel = ({ film }: InvestmentPanelProps) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const fundingPercentage = film.fundingGoal > 0 ? (film.currentFunding / film.fundingGoal) * 100 : 0;
-  const daysLeft = Math.ceil((new Date(film.targetDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+  const daysLeft = film.targetDate ? Math.ceil((new Date(film.targetDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)) : null;
 
   const handleCrowdproduce = () => {
     setShowPopup(true);
@@ -68,7 +68,7 @@ const InvestmentPanel = ({ film }: InvestmentPanelProps) => {
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Deadline</span>
               <div className="flex items-center gap-2">
-                <span className="text-sm font-medium">{film.targetDate}</span>
+                <span className="text-sm font-medium">{film.targetDate || "TBD"}</span>
                 <Info className="w-3 h-3 text-muted-foreground hover:text-foreground cursor-help" title="Last day to invest in this film" />
               </div>
             </div>

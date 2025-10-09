@@ -4,7 +4,7 @@ import { Film } from "@/types/film";
 import { FilmService } from "@/services/filmService";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import UnifiedPopup from "./UnifiedPopup";
+import { Link } from "react-router-dom";
 
 type RecommendedFilmsProps = {
   currentFilmId: string;
@@ -14,7 +14,6 @@ const RecommendedFilms = ({ currentFilmId }: RecommendedFilmsProps) => {
   const [recommendedFilms, setRecommendedFilms] = useState<Film[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const fetchRecommendedFilms = async () => {
@@ -39,13 +38,6 @@ const RecommendedFilms = ({ currentFilmId }: RecommendedFilmsProps) => {
     fetchRecommendedFilms();
   }, [currentFilmId]);
 
-  const handleViewAllFilms = () => {
-    setShowPopup(true);
-  };
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
 
   if (loading) {
     return (
@@ -75,14 +67,15 @@ const RecommendedFilms = ({ currentFilmId }: RecommendedFilmsProps) => {
               Discover other films ready for investment
             </p>
           </div>
-          <Button 
-            variant="outline" 
-            onClick={handleViewAllFilms}
-            className="hidden md:flex items-center gap-2"
-          >
-            View all films
-            <ArrowRight className="w-4 h-4" />
-          </Button>
+          <Link to="/projects">
+            <Button 
+              variant="outline" 
+              className="hidden md:flex items-center gap-2"
+            >
+              View all films
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,22 +86,17 @@ const RecommendedFilms = ({ currentFilmId }: RecommendedFilmsProps) => {
 
         {/* Mobile view all button */}
         <div className="flex justify-center mt-8 md:hidden">
-          <Button 
-            variant="outline" 
-            onClick={handleViewAllFilms}
-            className="flex items-center gap-2"
-          >
-            View all films
-            <ArrowRight className="w-4 h-4" />
-          </Button>
+          <Link to="/projects">
+            <Button 
+              variant="outline" 
+              className="flex items-center gap-2"
+            >
+              View all films
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
         </div>
       </div>
-
-      {/* Unified Popup */}
-      <UnifiedPopup 
-        isOpen={showPopup} 
-        onClose={handleClosePopup} 
-      />
     </section>
   );
 };

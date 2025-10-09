@@ -30,10 +30,12 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">DIRECTOR</h4>
               <p className="text-lg">{film.director}</p>
             </div>
-            <div>
-              <h4 className="font-semibold text-sm text-muted-foreground mb-2">PRODUCER</h4>
-              <p className="text-lg">{film.producer}</p>
-            </div>
+            {film.producer && (
+              <div>
+                <h4 className="font-semibold text-sm text-muted-foreground mb-2">PRODUCER</h4>
+                <p className="text-lg">{film.producer}</p>
+              </div>
+            )}
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">WRITER</h4>
               <p className="text-lg">{film.writer}</p>
@@ -50,10 +52,12 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">LANGUAGE</h4>
               <p className="text-lg">{film.language}</p>
             </div>
-            <div>
-              <h4 className="font-semibold text-sm text-muted-foreground mb-2">PRODUCTION COMPANY</h4>
-              <p className="text-lg">{film.productionCompany}</p>
-            </div>
+            {film.productionCompany && (
+              <div>
+                <h4 className="font-semibold text-sm text-muted-foreground mb-2">PRODUCTION COMPANY</h4>
+                <p className="text-lg">{film.productionCompany}</p>
+              </div>
+            )}
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">DISTRIBUTION RIGHTS</h4>
               <div className="flex flex-wrap gap-1">
@@ -95,10 +99,12 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
                 <span className="text-muted-foreground">Director</span>
                 <span className="font-medium">{film.director}</span>
               </div>
-              <div className="flex justify-between items-center py-2">
-                <span className="text-muted-foreground">Producer</span>
-                <span className="font-medium">{film.producer}</span>
-              </div>
+              {film.producer && (
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-muted-foreground">Producer</span>
+                  <span className="font-medium">{film.producer}</span>
+                </div>
+              )}
               <div className="flex justify-between items-center py-2">
                 <span className="text-muted-foreground">Writer</span>
                 <span className="font-medium">{film.writer}</span>
@@ -151,19 +157,6 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">INVESTMENT RANGE</h4>
               <p className="text-lg">₱{film.minimumInvestment.toLocaleString()} - ₱{film.maximumInvestment.toLocaleString()}</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-sm text-muted-foreground mb-2">RISK LEVEL</h4>
-              <Badge 
-                variant="secondary"
-                className={`${
-                  film.riskLevel === 'low' ? 'bg-green-100 text-green-800' :
-                  film.riskLevel === 'medium' ? 'bg-yellow-100 text-yellow-800' :
-                  'bg-red-100 text-red-800'
-                }`}
-              >
-                {film.riskLevel.toUpperCase()}
-              </Badge>
             </div>
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">CURRENT FUNDING</h4>

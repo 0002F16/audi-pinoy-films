@@ -20,8 +20,11 @@ const UnifiedPopup = ({ isOpen, onClose }: UnifiedPopupProps) => {
           <DialogTitle>
             Important Information
           </DialogTitle>
-          <DialogDescription className="pt-4">
-            This is a fake project, but we would like to invite you to an interview to discuss the real Audience Impact platform and your interest in crowdproducing Filipino films.
+          <DialogDescription className="pt-4 text-justify">
+            This is a concept test — Audience Impact is launching soon.
+            We'd love to invite you to a short interview to share your thoughts about the real platform and the future of crowdproducing Filipino films.
+            <br /><br />
+            <strong>As thanks for your time, we'll send ₱500 after the session.</strong>
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-3 pt-4">
@@ -30,7 +33,7 @@ const UnifiedPopup = ({ isOpen, onClose }: UnifiedPopupProps) => {
             className="w-full"
           >
             <Calendar className="w-4 h-4 mr-2" />
-            Schedule Interview
+            Schedule Call
           </Button>
           <Button 
             variant="outline" 

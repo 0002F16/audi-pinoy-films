@@ -37,7 +37,7 @@ const Index = () => {
             <Button 
               size="lg"
               onClick={() => scrollToElement('how-it-works')}
-              className="bg-white text-primary hover:bg-white/90 transition-colors text-lg px-8 py-6 h-auto"
+              className="bg-white text-primary hover:bg-white/90 transition-colors text-lg px-8 py-6 h-auto w-full sm:w-auto"
             >
               Join the waitlist
             </Button>
@@ -107,7 +107,7 @@ const Index = () => {
           <Button 
             size="lg"
             onClick={() => scrollToElement('how-it-works')}
-            className="bg-white text-primary hover:bg-white/90 transition-colors text-lg px-8 py-6 h-auto"
+            className="bg-white text-primary hover:bg-white/90 transition-colors text-lg px-8 py-6 h-auto w-full sm:w-auto"
           >
             Join the waitlist
           </Button>
