@@ -38,12 +38,12 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
             )}
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">WRITER</h4>
-              <p className="text-lg">{film.writer}</p>
+              <p className="text-lg">{film.writer || "TBD"}</p>
             </div>
             {film.cinematographer && (
               <div>
                 <h4 className="font-semibold text-sm text-muted-foreground mb-2">CINEMATOGRAPHER</h4>
-                <p className="text-lg">{film.cinematographer}</p>
+                <p className="text-lg">{film.cinematographer || "TBD"}</p>
               </div>
             )}
           </div>
@@ -55,7 +55,7 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
             {film.productionCompany && (
               <div>
                 <h4 className="font-semibold text-sm text-muted-foreground mb-2">PRODUCTION COMPANY</h4>
-                <p className="text-lg">{film.productionCompany}</p>
+                <p className="text-lg">{film.productionCompany || "TBD"}</p>
               </div>
             )}
             <div>
@@ -102,23 +102,23 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
               {film.producer && (
                 <div className="flex justify-between items-center py-2">
                   <span className="text-muted-foreground">Producer</span>
-                  <span className="font-medium">{film.producer}</span>
+                  <span className="font-medium">{film.producer || "TBD"}</span>
                 </div>
               )}
               <div className="flex justify-between items-center py-2">
                 <span className="text-muted-foreground">Writer</span>
-                <span className="font-medium">{film.writer}</span>
+                <span className="font-medium">{film.writer || "TBD"}</span>
               </div>
               {film.cinematographer && (
                 <div className="flex justify-between items-center py-2">
                   <span className="text-muted-foreground">Cinematographer</span>
-                  <span className="font-medium">{film.cinematographer}</span>
+                  <span className="font-medium">{film.cinematographer || "TBD"}</span>
                 </div>
               )}
               {film.musicComposer && (
                 <div className="flex justify-between items-center py-2">
                   <span className="text-muted-foreground">Music Composer</span>
-                  <span className="font-medium">{film.musicComposer}</span>
+                  <span className="font-medium">{film.musicComposer || "TBD"}</span>
                 </div>
               )}
             </div>
@@ -156,7 +156,7 @@ const FilmInfo = ({ film }: FilmInfoProps) => {
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">INVESTMENT RANGE</h4>
-              <p className="text-lg">₱{film.minimumInvestment.toLocaleString()} - ₱{film.maximumInvestment.toLocaleString()}</p>
+              <p className="text-lg">₱{film.minimumInvestment.toLocaleString()} - {film.maximumInvestment ? `₱${film.maximumInvestment.toLocaleString()}` : "No Limit"}</p>
             </div>
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-2">CURRENT FUNDING</h4>

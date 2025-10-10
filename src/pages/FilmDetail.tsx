@@ -93,9 +93,7 @@ const FilmDetail = () => {
                 <span className="px-3 py-1 bg-primary text-primary-foreground text-sm rounded-full font-medium">
                   {film.genre}
                 </span>
-                {film.targetDate && (
-                  <span className="text-sm text-muted-foreground">{film.targetDate}</span>
-                )}
+                <span className="text-sm text-muted-foreground">{film.targetDate || "TBD"}</span>
                 <span className="text-sm text-muted-foreground">{film.country}</span>
               </div>
               

@@ -12,11 +12,11 @@ export interface Film {
   fundingGoal: number;
   currentFunding: number;
   minimumInvestment: number;
-  maximumInvestment: number;
+  maximumInvestment: number | null;
   expectedReturns: string;
   productionCompany: string | null;
   producer: string | null;
-  writer: string;
+  writer: string | null;
   cinematographer?: string;
   musicComposer?: string;
   language: string;
