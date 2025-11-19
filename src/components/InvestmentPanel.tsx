@@ -88,7 +88,7 @@ const InvestmentPanel = ({ film }: InvestmentPanelProps) => {
           {/* Subtext with Read More Link */}
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
-              ₱5,000 minimum investment.{" "}
+              ₱1,000 minimum investment.{" "}
               <button 
                 onClick={handleReadMore}
                 className="text-primary hover:text-primary/80 underline font-medium"
