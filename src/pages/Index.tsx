@@ -28,7 +28,7 @@ const Index = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-proxima font-bold text-white mb-6 leading-tight">
             Crowdproduce Films
             <br />
-            starting at ₱5,000
+            starting at ₱1,000
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
             Own a share of pre-production upside with transparent updates and clear terms.
